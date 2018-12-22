@@ -1,7 +1,7 @@
 /**
  * @export
  */
-export default function createElement(tag) {
+let createElement = tag => {
   let el = document.createElement(tag);
 
   for (let key in Element.prototype) {
@@ -22,4 +22,6 @@ export default function createElement(tag) {
   }
 
   return el;
-}
+};
+
+export default createElement;
