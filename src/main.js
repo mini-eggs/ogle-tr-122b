@@ -7,7 +7,7 @@ let createElement = tag => {
   for (let key in Element.prototype) {
     try {
       let val = Element.prototype[key];
-      if (typeof val === "function") {
+      if (val.call) { // We're a function.
         el[key] = function() {
           val.apply(this, arguments);
           return el;
