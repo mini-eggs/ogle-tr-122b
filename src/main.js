@@ -3,11 +3,13 @@
  */
 let createElement = tag => {
   let el = document.createElement(tag);
+  let proto = Element.prototype;
 
-  for (let key in Element.prototype) {
+  for (let key in proto) {
     try {
-      let val = Element.prototype[key];
-      if (val.call) { // We're a function.
+      let val = proto[key];
+      if (val.call) {
+        // We're a function.
         el[key] = function() {
           val.apply(this, arguments);
           return el;
@@ -21,7 +23,8 @@ let createElement = tag => {
     }
   }
 
+  // For interoperating with other libs easier.
+  el["chain"] = f => (f(el), el);
+
   return el;
 };
-
-export default createElement;

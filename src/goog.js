@@ -1,9 +1,9 @@
 var goog = goog || {};
 
-goog.exportSymbol = function(_, object) {
+goog.exportSymbol = function(path, object) {
   if (typeof module !== "undefined") {
     module["exports"] = object;
   } else {
-    window["createElement"] = object;
+    window[path] = object;
   }
 };

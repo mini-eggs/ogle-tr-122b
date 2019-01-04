@@ -1,9 +1,9 @@
 {
   "name": "ogle-tr-122b",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Evan M Jones <evanjones4040@gmail.com> (https://evanjon.es/)",
   "main": "dist/main.js",
-  "module": "src/main.js",
+  "types": "./types.d.ts",
   "license": "MIT",
   "scripts": {
     "start": "npm run start:clean & npm run start:gcc && npm run start:gzip",
