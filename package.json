@@ -1,19 +1,14 @@
 {
   "name": "ogle-tr-122b",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Evan M Jones <evanjones4040@gmail.com> (https://evanjon.es/)",
   "main": "dist/main.js",
-  "types": "./types.d.ts",
   "license": "MIT",
   "scripts": {
-    "start": "npm run start:clean & npm run start:gcc && npm run start:gzip",
-    "start:clean": "rm -rf dist || true && mkdir -p dist",
-    "start:gcc": "node_modules/google-closure-compiler-linux/compiler --generate_exports --export_local_property_definitions --use_types_for_optimization --formatting SINGLE_QUOTES --language_in=ECMASCRIPT6 --language_out=ECMASCRIPT5 --compilation_level ADVANCED --js_output_file=dist/main.js --js 'src/*.js'",
-    "start:gzip": "gzip -k -f dist/*",
+    "start": "mkdir -p dist && cp src/* dist && gzip -kf dist/*",
     "test": "ava"
   },
   "devDependencies": {
-    "google-closure-compiler-linux": "^20181210.0.0",
     "ava": "^1.0.1",
     "browser-env": "^3.2.5"
   }

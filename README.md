@@ -2,7 +2,7 @@
 
 OGLE-TR-122b is the smallest star know to man.
 
-OGLE-TR-122b the NPM library is a small abstraction over the DOM's APIs for creating elements. It's a fun experiment. Final build clocks in at 289 bytes of ECMAScript 5.
+OGLE-TR-122b the NPM library is a small abstraction over the DOM's APIs for creating elements. It's a fun, handle minimized experiment. Final build clocks in at 259 bytes of gzip'd ECMAScript 5.
 
 #### Example
 
